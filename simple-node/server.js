@@ -87,11 +87,18 @@ function handleFav(req, res) {
     res.end();
 }
 
+function nodeStart(req, res) {
+    console.log("someone is in, but dunno who yet!");
+    res.write("hi! type in your name at the end of the URL!\nie. tuan-garden.com/node/(your name)");
+    res.end;
+}
+
 // start the server:
 server.listen(process.env.PORT || 8080, serverStart);
-server.get('/:username', welcome);
-server.get('/:username/:preference', handlePreference);
-server.get('/:username/:preference/:fav', handleFav);
-server.get('/data', handleGet);    // GET request listener
-server.get('/date', handleDate);   // GET request listener
-server.post('/data', handlePost);  // POST request listener
+server.get('/node', nodeStart);
+server.get('/node/:username', welcome);
+server.get('/node/:username/:preference', handlePreference);
+server.get('/node/:username/:preference/:fav', handleFav);
+// server.get('/data', handleGet);    // GET request listener
+// server.get('/date', handleDate);   // GET request listener
+// server.post('/data', handlePost);  // POST request listener
