@@ -70,20 +70,20 @@ function handleDate(request, response) {
 
 function welcome(request, response) {
     console.log(request.params.username + " just landed!");
-    response.send('hey ' + request.params.username + '!' + "\n what do you like?");
+    response.write('hey ' + request.params.username + '!' + "\n what do you like?");
     response.end();
 }
 
 function handlePreference(req, res) {
     console.log(req.params.username + " wants to talk about " + req.params.preference + "!");
-    res.send(req.params.username + ", what's your favorite kind of " + req.params.preference + "?");
+    res.write(req.params.username + ", what's your favorite kind of " + req.params.preference + "?");
     res.end();
 
 }
 
 function handleFav(req, res) {
     console.log(req.params.username + "'s favorite " + req.params.preference + " is " + req.params.fav + "!");
-    res.send("wow, " + req.params.fav + " sounds really good!");
+    res.write("wow, " + req.params.fav + " sounds really good!");
     res.end();
 }
 
