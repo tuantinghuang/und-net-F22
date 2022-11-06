@@ -90,7 +90,7 @@ function handleFav(req, res) {
 function nodeStart(req, res) {
     console.log("someone is in, but dunno who yet!");
     res.write("hi! type in your name at the end of the URL!\nie. tuan-garden.com/node/(your name)");
-    res.end;
+    res.end();
 }
 
 // start the server:
